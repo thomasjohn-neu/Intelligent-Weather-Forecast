@@ -63,7 +63,16 @@ To use your own APP ID for openweathermap, update the `APP_ID` under `intelligen
             WeatherWidget(1 for current city, rest based on the cites added to the config array)
         DetailedWeather - Switches Home or DetailedWeather if city is selected or vice-versa
 
+## Screenshots
 
+* Dashboard
+  ![Dashboard](screenshots/Dashboard.png)
+
+* Dashboard - Imperial Units
+  ![Dashboard](screenshots/DasboardImperial.png)
+
+* Detailed Weather View
+  ![Dashboard](screenshots/DetailedView.png)
 
 
 
