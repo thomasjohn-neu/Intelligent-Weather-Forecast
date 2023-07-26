@@ -38,9 +38,9 @@ intelligent weather Forecasting service.
 
 * ## React Architecture
 Tried to use standard react library folder structuring and code modules to seperate the render logic, control logic and configurations
-* src/components - for all components and corresponding style files
-* src/constants - for third party API URL configs, constants and static configurations and other constants like units for statndard, metric, imperial mapping
-* src/utils - for reusable utility functions, functions for request api calls, javascript fetch calls, more REST methods can be added in similar fashion to avoid code complexity in components. This utils also have API specific utils for URL configurations and query parameter extensions
+* `src/components` - for all components and corresponding style files
+* `src/constants` - for third party API URL configs, constants and static configurations and other constants like units for statndard, metric, imperial mapping
+* `src/utils` - for reusable utility functions, functions for request api calls, javascript fetch calls, more REST methods can be added in similar fashion to avoid code complexity in components. This utils also have API specific utils for URL configurations and query parameter extensions
 
 * ## Others
 
@@ -50,6 +50,19 @@ Used standard react library for routing to support new url template routings, re
 
 ## CORS bypassing
 To avoid CORS error, API call to the openweathermap is getting redirected from https://thingproxy.freeboard.io/fetch/
+
+
+## APP Token
+To use your own APP ID for openweathermap, update the `APP_ID` under `intelligent-weather-forecast/src/constants/apiConstants.ts`
+
+## Component Hierarchy
+    App - 
+        NavBar -
+            DropDown 
+        Home - 
+            WeatherWidget(1 for current city, rest based on the cites added to the config array)
+        DetailedWeather - Switches Home or DetailedWeather if city is selected or vice-versa
+
 
 
 
