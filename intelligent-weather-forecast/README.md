@@ -1,46 +1,62 @@
-# Getting Started with Create React App
+# Intelligent Weather Portal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Web front-end of a new,
+intelligent weather Forecasting service.
 
-## Available Scripts
+## Tech Stack
+* React 18.2.0
+* Typescript 4.9.5
 
-In the project directory, you can run:
+## Steps to run
+* Clone the repsoitory using `git clone git@github.com:thomasjohn-neu/Intelligent-Weather-Forecast.git`
+* From the folder `intelligent-weather-forecast`, run `npm install` to download dependencies
+* Run `npm start` and open url `localhost:3000` from your browser
+* Run `npm test` to execute the unit tests
 
-### `npm start`
+## Third Party API used
+* https://openweathermap.org/
+        
+    Uses the Geo Location API services and current weather API for updated weather information
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    ### API Used
+    * https://api.openweathermap.org/data/2.5/weather?q=London
+    * https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Features
 
-### `npm test`
+* By default displays the weather of current location, Berlin and London
+* The app dynamically supports multiple locations, to add more locations, add cities inside the array at `intelligent-weather-forecast/src/constants/cities.ts`
+* The weather widgets displays dynamic images and icons based on the current weather
+* Supports `Metric`, `Imperial`, `Standard` Unit Conventions which can be changed from the dashboard using the dropdown available at Navigation Bar
+* Detailed page shows `Sunrise`, `Sunset`, `Humidity`, `Visibility`, `High`, `Low` and related `climate description`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Thought Process while developing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* ## Component structuring
+    Tried to make small components for Dashboard, City based widgets for dashboard, and detailed view, so app can scale for more cities and more felxibility to add new routes and new features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* ## React Architecture
+Tried to use standard react library folder structuring and code modules to seperate the render logic, control logic and configurations
+* src/components - for all components and corresponding style files
+* src/constants - for third party API URL configs, constants and static configurations and other constants like units for statndard, metric, imperial mapping
+* src/utils - for reusable utility functions, functions for request api calls, javascript fetch calls, more REST methods can be added in similar fashion to avoid code complexity in components. This utils also have API specific utils for URL configurations and query parameter extensions
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* ## Others
 
-### `npm run eject`
+Used standard react library for routing to support new url template routings, react-bootstrap for responsive design 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## CORS bypassing
+To avoid CORS error, API call to the openweathermap is getting redirected from https://thingproxy.freeboard.io/fetch/
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+
+
+
+
